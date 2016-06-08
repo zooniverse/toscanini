@@ -1,0 +1,23 @@
+redis:
+  image: redis:3.0.5
+  ports:
+    - '6379:6379'
+  volumes:
+    - tosca-redis:/var/lib/redis/data
+
+tosca:
+  build: .
+  links:
+    - redis
+  volumes:
+    - .:/tosca
+  ports:
+    - '8000:8000'
+      
+
+sidekiq:
+  build: .
+  links:
+    - redis
+  volumes:
+    - .:/tosca

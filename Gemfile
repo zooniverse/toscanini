@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'sidekiq'
+gem 'foreman'
+gem 'sidekiq-cron'
+gem 'panoptes-client'
+gem 'telekinesis'
