@@ -16,4 +16,4 @@ COPY . .
 
 RUN (cd /tosca && git log --format="%H" -n 1 > commit_id.txt && rm -rf .git)
 
-ENTRYPOINT ["/tosca/bin/sidekiq","/tosca/server.rb"]
+#ENTRYPOINT ["/tosca/bin/sidekiq","/tosca/server.rb"]
