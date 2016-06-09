@@ -1,3 +1,4 @@
 :queues:
   - tosca_ocr
   - tosca_rest
+  - default
