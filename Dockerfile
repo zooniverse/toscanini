@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -qq -y build-essential git nodejs libsqlit
 ENV LANG en_US.UTF-8
 
 COPY Gemfile Gemfile
+
 RUN bundle config --global silence_root_warning 1
 RUN bundle install
 

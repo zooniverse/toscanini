@@ -10,15 +10,18 @@ tosca:
   command: bin/rails server
   links:
     - redis
-  volumes:
-    - .:/tosca
+#  volumes:
+#    - .:/tosca
   ports:
     - '8000:8000'
       
 
 sidekiq:
   build: .
+  command: bundle exec sidekiq -C config/sidekiq.yml
+  env_file:
+    .toscanini.env
   links:
     - redis
-  volumes:
-    - .:/tosca
+#  volumes:
+#    - .:/tosca
