@@ -1,20 +1,15 @@
 redis:
-  image: redis:3.0.5
-  ports:
-    - '6379:6379'
-  volumes:
-    - tosca-redis:/var/lib/redis/data
+  image: redis
+  command: redis-server --appendonly yes
 
 tosca:
   build: .
   command: bin/rails server
   links:
     - redis
-#  volumes:
-#    - .:/tosca
   ports:
-    - '8000:8000'
-      
+    - '3000:3000'
+
 
 sidekiq:
   build: .
@@ -23,5 +18,3 @@ sidekiq:
     .toscanini.env
   links:
     - redis
-#  volumes:
-#    - .:/tosca

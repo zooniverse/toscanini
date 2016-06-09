@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'aws-sdk-v1'
 # gem 'puma'
 gem 'sidekiq'
-# gem 'sidetiq'
+gem 'sidetiq'
 gem 'panoptes-client'
 
 # Use ActiveModel has_secure_password
