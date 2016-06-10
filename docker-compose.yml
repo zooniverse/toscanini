@@ -9,6 +9,8 @@ tosca:
     - redis
   ports:
     - '3000:3000'
+  volumes:
+    - .:/tosca
 
 
 sidekiq:
@@ -18,3 +20,5 @@ sidekiq:
     .toscanini.env
   links:
     - redis
+  volumes:
+    - .:/tosca
