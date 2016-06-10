@@ -15,7 +15,6 @@ RUN bundle install
 
 COPY . .
 
-#EXPOSE 8080
 EXPOSE 3000
 
 RUN (cd /tosca && git log --format="%H" -n 1 > commit_id.txt && rm -rf .git)
