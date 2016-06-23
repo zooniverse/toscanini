@@ -6,7 +6,7 @@ class TimedWorker
   include Sidetiq::Schedulable
 
   recurrence do
-    minutely(5)
+    minutely(15)
   end
 
   def perform

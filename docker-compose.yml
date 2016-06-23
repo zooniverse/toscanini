@@ -1,6 +1,6 @@
 redis:
   image: redis
-  command: redis-server --appendonly yes
+  command: redis-server --appendonly yes --syslog-enabled yes
 
 tosca:
   build: .

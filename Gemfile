@@ -24,7 +24,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'aws-sdk-v1'
+gem 'faraday'
 # gem 'puma'
+gem 'json'
 gem 'sidekiq'
 gem 'sidetiq'
 gem 'panoptes-client'
