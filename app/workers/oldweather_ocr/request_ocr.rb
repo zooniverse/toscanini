@@ -7,11 +7,10 @@ module Toscanini
 
         include Sidekiq::Worker
 
-        def perform(how_hard="super hard", how_long=1)
-          how_long = how_long * 2
-          
+        def perform(name="no filename", how_long=1)
+
           sleep how_long
-          logger.info "reading #{how_hard} for #{how_long} seconds"
+          logger.info "reading #{name} for #{how_long} seconds"
         end
 
       end

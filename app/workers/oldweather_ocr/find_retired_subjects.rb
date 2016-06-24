@@ -22,7 +22,6 @@ module Toscanini
 
         def initialize()
           panoptes_config = load_config("panoptes.yml", "development")
-          logger.info panoptes_config
           @panoptes = Toscanini::Services::Panoptes.new(panoptes_config.fetch("url"),
                                                  panoptes_config.fetch("client_id"),
                                                  panoptes_config.fetch("client_secret"))
@@ -37,13 +36,17 @@ module Toscanini
           logger.info "Looking for retired subjects in workflow #{OldWeatherGridWorkflowId}"
 
           begin
-            @panoptes.fetch_retired OldWeatherGridWorkflowId
+            retirees = @panoptes.fetch_retired OldWeatherGridWorkflowId
+
+            retirees.each do | subject |
+              RequestAggregation.perform_async OldWeatherGridWorkflowId, subject.id
+            end
           rescue NotImplementedError => ex
-            logger.warn "Could not fetch retired subjects: #{ex.to_s}"
+            logger.warn "Could not request aggregation for retired subjects: #{ex.to_s}"
           end
 
           # testing purposes
-          RequestAggregation.perform_async "pretty hard", 4
+          RequestAggregation.perform_async OldWeatherGridWorkflowId, 4
         end
 
       end

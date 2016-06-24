@@ -6,12 +6,12 @@ module Toscanini
       class RequestAggregation
         include Sidekiq::Worker
 
-        def perform(how_hard="super hard", how_long=1)
-          sleep how_long
-          logger.info "aggregating #{how_hard} for #{how_long} seconds"
+        def perform(workflow_id, subject_id)
+          sleep 5
+          logger.info "aggregating #{subject_id} in workflow #{workflow_id}"
 
           # testing purposes
-          RequestOCR.perform_async how_hard, how_long
+          RequestOCR.perform_async "file name", 8
         end
 
       end
