@@ -1,0 +1,9 @@
+development:
+  url: "http://localhost:3000"
+  client_id: 08f0c5aeb0384dd2eaa9546a0a61e929601820906f05148024449b2abe609b8a
+  client_secret: 523a74a879bbcfa39ef452a817967d256de4b7da5779552c9bdc8481d2b51568
+
+test:
+  url: "http://localhost:3000"
+  client_id: fake_id
+  client_secret: fake_secret
