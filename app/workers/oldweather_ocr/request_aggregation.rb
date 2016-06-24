@@ -7,8 +7,11 @@ module Toscanini
         include Sidekiq::Worker
 
         def perform(workflow_id, subject_id)
-          sleep 5
-          logger.info "aggregating #{subject_id} in workflow #{workflow_id}"
+          logger.debug "requesting aggregation for subject #{subject_id} in workflow #{workflow_id}"
+
+          # TODO: call aggregation web service
+          # note this call will be asynchronous and we need to pass it an
+          # endpoint to call back
 
           # testing purposes
           RequestOCR.perform_async "file name", 8

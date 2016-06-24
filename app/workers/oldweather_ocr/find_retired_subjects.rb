@@ -25,15 +25,14 @@ module Toscanini
           @panoptes = Toscanini::Services::Panoptes.new(panoptes_config.fetch("url"),
                                                  panoptes_config.fetch("client_id"),
                                                  panoptes_config.fetch("client_secret"))
-          logger.info "initializer done"
         end
 
         recurrence do
-          minutely(1)
+          hourly(1)
         end
 
         def perform
-          logger.info "Looking for retired subjects in workflow #{OldWeatherGridWorkflowId}"
+          logger.debug "Looking for retired subjects in workflow #{OldWeatherGridWorkflowId}"
 
           begin
             retirees = @panoptes.fetch_retired OldWeatherGridWorkflowId

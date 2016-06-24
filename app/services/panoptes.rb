@@ -14,6 +14,7 @@ module Toscanini
       end
 
       def fetch_retired(workflow_id)
+        # TODO: when the gem implements this method, call it
         raise NotImplementedError, "Waiting for support in panoptes-client gem"
       end
     end
