@@ -42,7 +42,6 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
     builder (3.2.2)
-    byebug (9.0.5)
     celluloid (0.17.3)
       celluloid-essentials
       celluloid-extras
@@ -188,7 +187,6 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk-v1
-  byebug
   faraday
   jbuilder (~> 2.0)
   json
