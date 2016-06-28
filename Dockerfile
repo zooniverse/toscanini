@@ -1,6 +1,4 @@
-FROM zooniverse/ruby:2.3
-# FROM zooniverse/ruby:jruby-9.0.5.0
-# TODO: this will need to be jruby before we can get telekinesis working
+FROM zooniverse/ruby:jruby-9.0.5.0
 
 MAINTAINER Amy Boyer <amy@zooniverse.org>
 

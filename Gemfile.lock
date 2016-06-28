@@ -30,6 +30,11 @@ GEM
       activemodel (= 4.2.6)
       activesupport (= 4.2.6)
       arel (~> 6.0)
+    activerecord-jdbc-adapter (1.3.20)
+      activerecord (>= 2.2)
+    activerecord-jdbcpostgresql-adapter (1.3.20)
+      activerecord-jdbc-adapter (~> 1.3.20)
+      jdbc-postgres (>= 9.1)
     activesupport (4.2.6)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -60,7 +65,7 @@ GEM
     celluloid-supervision (0.20.6)
       timers (>= 4.1.1)
     coderay (1.1.1)
-    concurrent-ruby (1.0.2)
+    concurrent-ruby (1.0.2-java)
     connection_pool (2.2.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -73,16 +78,18 @@ GEM
       faraday_middleware (~> 0.10)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
+    ffi (1.9.10-java)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashdiff (0.3.0)
-    hitimes (1.2.4)
+    hitimes (1.2.4-java)
     i18n (0.7.0)
     ice_cube (0.13.3)
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    json (1.8.3)
+    jdbc-postgres (9.4.1206)
+    json (1.8.3-java)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -91,21 +98,18 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
     multipart-post (2.0.0)
-    nokogiri (1.6.8)
-      mini_portile2 (~> 2.1.0)
-      pkg-config (~> 1.1.7)
+    nokogiri (1.6.8-java)
     panoptes-client (0.2.6)
       faraday
       faraday-panoptes (~> 0.2.0)
-    pkg-config (1.1.7)
-    pry (0.10.3)
+    pry (0.10.3-java)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+      spoon (~> 0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -163,16 +167,18 @@ GEM
       ice_cube (~> 0.13.2)
       sidekiq (>= 4.0.0)
     slop (3.6.0)
+    spoon (0.0.4)
+      ffi
     sprockets (3.6.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.0.4)
+    sprockets-rails (3.1.0)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.11)
+    telekinesis (3.1.1-java)
     thor (0.19.1)
-    thread_safe (0.3.5)
+    thread_safe (0.3.5-java)
     timers (4.1.1)
       hitimes
     tzinfo (1.2.2)
@@ -183,12 +189,14 @@ GEM
       hashdiff
 
 PLATFORMS
-  ruby
+  java
 
 DEPENDENCIES
+  activerecord-jdbcpostgresql-adapter
   aws-sdk-v1
   faraday
   jbuilder (~> 2.0)
+  jdbc-postgres
   json
   panoptes-client
   pry
@@ -197,7 +205,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   sidekiq
   sidetiq
-  sqlite3
+  telekinesis
   webmock
 
 BUNDLED WITH

@@ -29,7 +29,7 @@ module Toscanini
         end
 
         recurrence do
-          hourly(1)
+          minutely(15)
         end
 
         def perform

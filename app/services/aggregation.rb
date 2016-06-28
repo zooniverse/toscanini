@@ -9,7 +9,7 @@ module Toscanini
 
       def aggregate_subject(workflow_id, subject_id, callback_url = "")
         # TODO: call aggregation web service once method is implemented
-        throw new NotImplementedError "the method has not been created on the aggregation web service"
+        raise NotImplementedError, "the method has not been created on the aggregation web service"
       end
 
     end

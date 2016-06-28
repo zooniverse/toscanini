@@ -2,16 +2,24 @@ redis:
   image: redis
   command: redis-server --appendonly yes --syslog-enabled yes
 
+postgres:
+  image: postgres
+  environment:
+    - "POSTGRES_USER=tosca"
+    - "POSTGRES_PASSWORD=tosca"
+  ports:
+    - "5432:5432"
+
 tosca:
   build: .
   command: bin/rails server -b 0.0.0.0
   links:
     - redis
+    - postgres
   ports:
     - '3000:3000'
   volumes:
     - .:/tosca
-
 
 sidekiq:
   build: .
@@ -20,5 +28,6 @@ sidekiq:
     .toscanini.env
   links:
     - redis
+    - postgres
   volumes:
     - .:/tosca
