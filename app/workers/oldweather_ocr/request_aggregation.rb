@@ -6,6 +6,8 @@ module Toscanini
       class RequestAggregation
         include Sidekiq::Worker
 
+        attr_reader :client
+
         # TODO: obviously we're gonna need a config file setting for where this lives
         ToscaniniCallbackEndpoint = "http://localhost:3000/"
 
@@ -21,7 +23,7 @@ module Toscanini
         def initialize()
           aggregation_config = load_config("aggregation.yml", "development")
           # TODO: move to aggregation service constructor
-          @aggregation = Toscanini::Services::PanoptesAggregation.new(aggregation_config.fetch("host"),
+          @client = Toscanini::Services::PanoptesAggregation.new(aggregation_config.fetch("host"),
                                                  aggregation_config.fetch("user"),
                                                  aggregation_config.fetch("application"))
         end
@@ -30,7 +32,7 @@ module Toscanini
           logger.debug "requesting aggregation for subject #{subject_id} in workflow #{workflow_id}"
 
           begin
-            @aggregation.aggregate_subject workflow_id, subject_id, ToscaniniCallbackEndpoint
+            aggregation.aggregate_subject workflow_id, subject_id, ToscaniniCallbackEndpoint
           rescue NotImplementedError => ex
             logger.warn "Could not request aggregation for retired subject #{subject_id} in workflow #{workflow_id}: #{ex.to_s}"
           end

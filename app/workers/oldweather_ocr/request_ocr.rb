@@ -7,13 +7,27 @@ module Toscanini
 
         include Sidekiq::Worker
 
+        attr_reader :client
+
+        def initialize()
+          @client = ::Toscanini::Services::Nanoweather.new()
+        end
+
         def perform(name="no filename", how_long=1)
 
-          # TODO: call Nanoweather web service
-          # endpoint has just been set up but we may need to negotiate the
-          # urls with them a little
           sleep how_long
-          logger.info "reading #{name} for #{how_long} seconds"
+          begin
+            client.request_ocr
+            PollOCR.perform_async name
+          rescue NotImplementedError => ex
+            logger.warn "Failed to request OCR of subject #{name}: #{ex.to_s}"
+          rescue Exception => ex
+            # TODO: rescue more specific errors
+            logger.warn "Failed to request OCR of subject #{name}: #{ex.to_s}"
+            raise
+          end
+
+          logger.info "OCR-ing subject #{name} for #{how_long} seconds"
         end
 
       end

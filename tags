@@ -1,0 +1,64 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Toscanini
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+FindRetiredSubjects	app/workers/oldweather_ocr/find_retired_subjects.rb	/^      class FindRetiredSubjects$/;"	c	class:Toscanini.Workers.OldWeatherOCR
+Nanoweather	app/services/nanoweather.rb	/^    class Nanoweather$/;"	c	class:Toscanini.Services
+OldWeatherOCR	app/workers/oldweather_ocr/find_retired_subjects.rb	/^    module OldWeatherOCR$/;"	m	class:Toscanini.Workers
+OldWeatherOCR	app/workers/oldweather_ocr/poll_ocr.rb	/^    module OldWeatherOCR$/;"	m	class:Toscanini.Workers
+OldWeatherOCR	app/workers/oldweather_ocr/process_ocr_result.rb	/^    module OldWeatherOCR$/;"	m	class:Toscanini.Workers
+OldWeatherOCR	app/workers/oldweather_ocr/request_aggregation.rb	/^    module OldWeatherOCR$/;"	m	class:Toscanini.Workers
+OldWeatherOCR	app/workers/oldweather_ocr/request_ocr.rb	/^    module OldWeatherOCR$/;"	m	class:Toscanini.Workers
+Panoptes	app/services/panoptes.rb	/^    class Panoptes$/;"	c	class:Toscanini.Services
+PanoptesAggregation	app/services/aggregation.rb	/^    class PanoptesAggregation$/;"	c	class:Toscanini.Services
+PollOCR	app/workers/oldweather_ocr/poll_ocr.rb	/^      class PollOCR$/;"	c	class:Toscanini.Workers.OldWeatherOCR
+ProcessOCRResult	app/workers/oldweather_ocr/process_ocr_result.rb	/^      class ProcessOCRResult$/;"	c	class:Toscanini.Workers.OldWeatherOCR
+RequestAggregation	app/workers/oldweather_ocr/request_aggregation.rb	/^      class RequestAggregation$/;"	c	class:Toscanini.Workers.OldWeatherOCR
+RequestOCR	app/workers/oldweather_ocr/request_ocr.rb	/^      class RequestOCR$/;"	c	class:Toscanini.Workers.OldWeatherOCR
+Services	app/services/aggregation.rb	/^  module Services$/;"	m	class:Toscanini
+Services	app/services/nanoweather.rb	/^  module Services$/;"	m	class:Toscanini
+Services	app/services/panoptes.rb	/^  module Services$/;"	m	class:Toscanini
+Toscanini	app/services/aggregation.rb	/^module Toscanini$/;"	m
+Toscanini	app/services/nanoweather.rb	/^module Toscanini$/;"	m
+Toscanini	app/services/panoptes.rb	/^module Toscanini$/;"	m
+Toscanini	app/workers/oldweather_ocr/find_retired_subjects.rb	/^module Toscanini$/;"	m
+Toscanini	app/workers/oldweather_ocr/poll_ocr.rb	/^module Toscanini$/;"	m
+Toscanini	app/workers/oldweather_ocr/process_ocr_result.rb	/^module Toscanini$/;"	m
+Toscanini	app/workers/oldweather_ocr/request_aggregation.rb	/^module Toscanini$/;"	m
+Toscanini	app/workers/oldweather_ocr/request_ocr.rb	/^module Toscanini$/;"	m
+Toscanini	config/application.rb	/^module Toscanini$/;"	m
+Workers	app/workers/oldweather_ocr/find_retired_subjects.rb	/^  module Workers$/;"	m	class:Toscanini
+Workers	app/workers/oldweather_ocr/poll_ocr.rb	/^  module Workers$/;"	m	class:Toscanini
+Workers	app/workers/oldweather_ocr/process_ocr_result.rb	/^  module Workers$/;"	m	class:Toscanini
+Workers	app/workers/oldweather_ocr/request_aggregation.rb	/^  module Workers$/;"	m	class:Toscanini
+Workers	app/workers/oldweather_ocr/request_ocr.rb	/^  module Workers$/;"	m	class:Toscanini
+aggregate_subject	app/services/aggregation.rb	/^      def aggregate_subject(workflow_id, subject_id, callback_url = "")$/;"	f	class:Toscanini.Services.PanoptesAggregation
+check_ocr_progress	app/services/nanoweather.rb	/^      def check_ocr_progress(subject_id)$/;"	f	class:Toscanini.Services.Nanoweather
+config_path	app/workers/oldweather_ocr/find_retired_subjects.rb	/^        def config_path(filename)$/;"	f	class:Toscanini.Workers.OldWeatherOCR.FindRetiredSubjects
+config_path	app/workers/oldweather_ocr/request_aggregation.rb	/^        def config_path(filename)$/;"	f	class:Toscanini.Workers.OldWeatherOCR.RequestAggregation
+fetch_ocr	app/services/nanoweather.rb	/^      def fetch_ocr(subject_id)$/;"	f	class:Toscanini.Services.Nanoweather
+fetch_retired	app/services/panoptes.rb	/^      def fetch_retired(workflow_id)$/;"	f	class:Toscanini.Services.Panoptes
+initialize	app/services/aggregation.rb	/^      def initialize(host, user_id, application_id)$/;"	f	class:Toscanini.Services.PanoptesAggregation
+initialize	app/services/nanoweather.rb	/^      def initialize()$/;"	f	class:Toscanini.Services.Nanoweather
+initialize	app/services/panoptes.rb	/^      def initialize(url, client_id, client_secret)$/;"	f	class:Toscanini.Services.Panoptes
+initialize	app/workers/oldweather_ocr/find_retired_subjects.rb	/^        def initialize()$/;"	f	class:Toscanini.Workers.OldWeatherOCR.FindRetiredSubjects
+initialize	app/workers/oldweather_ocr/poll_ocr.rb	/^        def initialize()$/;"	f	class:Toscanini.Workers.OldWeatherOCR.PollOCR
+initialize	app/workers/oldweather_ocr/process_ocr_result.rb	/^        def initialize()$/;"	f	class:Toscanini.Workers.OldWeatherOCR.ProcessOCRResult
+initialize	app/workers/oldweather_ocr/request_aggregation.rb	/^        def initialize()$/;"	f	class:Toscanini.Workers.OldWeatherOCR.RequestAggregation
+initialize	app/workers/oldweather_ocr/request_ocr.rb	/^        def initialize()$/;"	f	class:Toscanini.Workers.OldWeatherOCR.RequestOCR
+is_ready?	app/workers/oldweather_ocr/poll_ocr.rb	/^        def is_ready?(result)$/;"	f	class:Toscanini.Workers.OldWeatherOCR.PollOCR
+load_config	app/workers/oldweather_ocr/find_retired_subjects.rb	/^        def load_config(filename, environment)$/;"	f	class:Toscanini.Workers.OldWeatherOCR.FindRetiredSubjects
+load_config	app/workers/oldweather_ocr/request_aggregation.rb	/^        def load_config(filename, environment)$/;"	f	class:Toscanini.Workers.OldWeatherOCR.RequestAggregation
+perform	app/workers/oldweather_ocr/find_retired_subjects.rb	/^        def perform$/;"	f	class:Toscanini.Workers.OldWeatherOCR.FindRetiredSubjects
+perform	app/workers/oldweather_ocr/poll_ocr.rb	/^        def perform(subject_id)$/;"	f	class:Toscanini.Workers.OldWeatherOCR.PollOCR
+perform	app/workers/oldweather_ocr/process_ocr_result.rb	/^        def perform(subject_id)$/;"	f	class:Toscanini.Workers.OldWeatherOCR.ProcessOCRResult
+perform	app/workers/oldweather_ocr/request_aggregation.rb	/^        def perform(workflow_id, subject_id)$/;"	f	class:Toscanini.Workers.OldWeatherOCR.RequestAggregation
+perform	app/workers/oldweather_ocr/request_ocr.rb	/^        def perform(name="no filename", how_long=1)$/;"	f	class:Toscanini.Workers.OldWeatherOCR.RequestOCR
+request_ocr	app/services/nanoweather.rb	/^      def request_ocr()$/;"	f	class:Toscanini.Services.Nanoweather
+retire	app/services/panoptes.rb	/^      def retire(subject_state)$/;"	f	class:Toscanini.Services.Panoptes
