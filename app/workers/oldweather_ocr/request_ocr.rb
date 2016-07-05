@@ -7,6 +7,8 @@ module Toscanini
 
         include Sidekiq::Worker
 
+        attr_reader :client
+
         def initialize()
           @client = ::Toscanini::Services::Nanoweather.new()
         end
@@ -15,7 +17,7 @@ module Toscanini
 
           sleep how_long
           begin
-            @client.request_ocr
+            client.request_ocr
             PollOCR.perform_async name
           rescue NotImplementedError => ex
             logger.warn "Failed to request OCR of subject #{name}: #{ex.to_s}"

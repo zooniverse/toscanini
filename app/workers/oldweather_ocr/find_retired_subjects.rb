@@ -6,8 +6,11 @@ module Toscanini
   module Workers
     module OldWeatherOCR
       class FindRetiredSubjects
+        
         include Sidekiq::Worker
         include Sidetiq::Schedulable
+
+        attr_reader :client
 
         OldWeatherGridWorkflowId = 1234
 
@@ -23,7 +26,7 @@ module Toscanini
         def initialize()
           panoptes_config = load_config("panoptes.yml", "development")
           # TODO: shouldn't the panoptes service object know how to load its own config?
-          @panoptes = Toscanini::Services::Panoptes.new(panoptes_config.fetch("url"),
+          @client = Toscanini::Services::Panoptes.new(panoptes_config.fetch("url"),
                                                  panoptes_config.fetch("client_id"),
                                                  panoptes_config.fetch("client_secret"))
         end
@@ -36,7 +39,7 @@ module Toscanini
           logger.debug "Looking for retired subjects in workflow #{OldWeatherGridWorkflowId}"
 
           begin
-            retirees = @panoptes.fetch_retired OldWeatherGridWorkflowId #, lastTimestamp
+            retirees = client.fetch_retired OldWeatherGridWorkflowId #, lastTimestamp
 
             retirees.each do | subject |
               RequestAggregation.perform_async OldWeatherGridWorkflowId, subject.id
