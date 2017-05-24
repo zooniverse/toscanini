@@ -1,6 +1,6 @@
 = CAUTION
 
-Most of the functionality of this service is provided by the newer and beter Caesar (zooniverse/caesar). The bit that isn't was custom-written for the defunct OldWeather OCR project. This code can probably be deleted pretty soon.
+Most of the functionality of this service is provided by the newer and better Caesar (zooniverse/caesar). The bit that isn't was custom-written for the defunct OldWeather OCR project. This code can probably be deleted pretty soon.
 
 == README
 
